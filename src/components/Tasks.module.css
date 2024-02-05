@@ -1,0 +1,27 @@
+.tasksBox header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.tasksBox header p {
+  font-size: .875rem;
+  font-weight: 700;
+}
+
+.tasksBox header .createdTasksMarker {
+  color: var(--blue);
+}
+
+.tasksBox header .completedTasksMarker {
+  color: var(--purple);
+}
+
+.tasksBox header p .count {
+  margin-left:.5rem;
+  padding: .125rem .5rem;
+  border-radius: 100px;
+  background: var(--gray-400);
+  font-size: .75rem;
+  color: var(--gray-200);
+}
