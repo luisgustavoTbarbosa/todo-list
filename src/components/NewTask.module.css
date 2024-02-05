@@ -1,8 +1,8 @@
 .newTaskForm {
   display: flex;
-  gap: 8px;
+  gap: .5rem;
   margin-top: -27px;
-  margin-bottom: 64px;
+  margin-bottom: 4rem;
 }
 
 .newTaskForm input {
@@ -16,7 +16,11 @@
 }
 
 .newTaskForm button {
-  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .3125rem;
+  padding: 1rem;
   border-radius: 8px;
   border: none;
   background: var(--blue-dark);
