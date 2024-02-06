@@ -1,5 +1,15 @@
 import { EmptyTask } from './EmptyTask'
+import { Task, TaskType } from './Task'
 import styles from './Tasks.module.css'
+
+const tasksArray: TaskType[] = [
+  {
+    comment: 'Comprar pão'
+  },
+  {
+    comment: 'Lavar a louça'
+  }
+]
 
 export function Tasks() {
   return (
@@ -9,7 +19,13 @@ export function Tasks() {
         <p className={styles.completedTasksMarker}>Concluídas <span className={styles.count}>0</span></p>
       </header>
       <div>
-        <EmptyTask />
+        {
+          tasksArray.length > 0 ? tasksArray.map(task => {
+            return (
+              <Task task={task} />
+            )
+          }) : <EmptyTask />
+        }
       </div>
     </main>
   )
