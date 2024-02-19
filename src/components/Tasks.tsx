@@ -1,17 +1,8 @@
 import { EmptyTask } from './EmptyTask'
-import { Task, TaskType } from './Task'
+import { Task } from './Task'
 import styles from './Tasks.module.css'
 
-const tasksArray: TaskType[] = [
-  {
-    comment: 'Comprar pão'
-  },
-  {
-    comment: 'Lavar a louça'
-  }
-]
-
-export function Tasks() {
+export function Tasks({ tasks }) {
   return (
     <main className={styles.tasksBox}>
       <header>
@@ -20,7 +11,7 @@ export function Tasks() {
       </header>
       <div>
         {
-          tasksArray.length > 0 ? tasksArray.map(task => {
+          tasks.length > 0 ? tasks.map(task => {
             return (
               <Task task={task} />
             )
