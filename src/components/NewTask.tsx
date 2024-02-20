@@ -7,7 +7,7 @@ export function NewTask({ createNewTask }) {
 
   function handleFormSubmit() {
     event.preventDefault()
-    createNewTask({comment: newTaskText})
+    createNewTask(newTaskText)
     setNewTaskText('')
   }
 
