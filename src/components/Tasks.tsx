@@ -2,7 +2,19 @@ import { EmptyTask } from './EmptyTask'
 import { Task } from './Task'
 import styles from './Tasks.module.css'
 
-export function Tasks({ tasks, handleCompletingTask, handleDeleteTask }) {
+interface Task {
+  id: number;
+  comment: string;
+  completed: boolean;
+}
+
+interface TasksProps {
+  tasks: Task[];
+  handleCompletingTask: (taskId: number) => void;
+  handleDeleteTask: (taskId: number) => void
+}
+
+export function Tasks({ tasks, handleCompletingTask, handleDeleteTask }: TasksProps) {
   return (
     <main className={styles.tasksBox}>
       <header>

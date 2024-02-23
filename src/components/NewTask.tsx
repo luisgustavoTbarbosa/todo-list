@@ -1,17 +1,21 @@
-import { useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 import styles from './NewTask.module.css'
 import { PlusCircle } from "@phosphor-icons/react"
 
-export function NewTask({ createNewTask }) {
+interface NewTaskProps {
+  createNewTask: (taskText: string) => void
+}
+
+export function NewTask({ createNewTask }: NewTaskProps) {
   const [newTaskText, setNewTaskText] = useState('')
 
-  function handleFormSubmit() {
+  function handleFormSubmit(event: FormEvent) {
     event.preventDefault()
     createNewTask(newTaskText)
     setNewTaskText('')
   }
 
-  function handleNewTaskTextChange() {
+  function handleNewTaskTextChange(event: ChangeEvent<HTMLInputElement>) {
     setNewTaskText(event.target.value)
   }
 

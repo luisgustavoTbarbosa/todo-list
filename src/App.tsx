@@ -6,9 +6,9 @@ import styles from './App.module.css'
 import { useState } from 'react'
 
 export function App() {
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState<{id: number; comment: string; completed: boolean}[]>([])
 
-  function handleCreateNewTask(newTaskText) {
+  function handleCreateNewTask(newTaskText: string) {
     const newTask = {
       id: tasks.length + 1,
       comment: newTaskText,
@@ -17,7 +17,7 @@ export function App() {
     setTasks([...tasks, newTask])
   }
 
-  function handleCompletingTask(taskId) {
+  function handleCompletingTask(taskId: number) {
     const updatedTasks = tasks.map((task) => {
       if (task.id === taskId) {
         return {...task, completed: !task.completed}
@@ -28,7 +28,7 @@ export function App() {
     setTasks(updatedTasks)
   }
 
-  function handleDeleteTask(taskId) {
+  function handleDeleteTask(taskId: number) {
     const updatedTasks = tasks.filter(task => task.id !== taskId)
     setTasks(updatedTasks)
   }
