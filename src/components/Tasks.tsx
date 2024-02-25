@@ -3,15 +3,15 @@ import { Task } from './Task'
 import styles from './Tasks.module.css'
 
 interface Task {
-  id: number;
+  id: string;
   comment: string;
   completed: boolean;
 }
 
 interface TasksProps {
   tasks: Task[];
-  handleCompletingTask: (taskId: number) => void;
-  handleDeleteTask: (taskId: number) => void
+  handleCompletingTask: (taskId: string) => void;
+  handleDeleteTask: (taskId: string) => void
 }
 
 export function Tasks({ tasks, handleCompletingTask, handleDeleteTask }: TasksProps) {
@@ -30,6 +30,7 @@ export function Tasks({ tasks, handleCompletingTask, handleDeleteTask }: TasksPr
           tasks.length > 0 ? tasks.map(task => {
             return (
               <Task
+                key={task.id}
                 task={task}
                 handleCompletingTask={handleCompletingTask}
                 handleDeleteTask={handleDeleteTask}

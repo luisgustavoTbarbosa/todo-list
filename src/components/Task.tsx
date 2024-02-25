@@ -2,18 +2,20 @@ import { Trash } from '@phosphor-icons/react'
 import styles from './Task.module.css'
 
 interface Task {
-  id: number;
+  id: string;
   comment: string;
   completed: boolean;
 }
 
 interface TaskProps {
   task: Task;
-  handleCompletingTask: (taskId: number) => void;
-  handleDeleteTask: (taskId: number) => void
+  handleCompletingTask: (taskId: string) => void;
+  handleDeleteTask: (taskId: string) => void
 }
 
 export function Task({ task, handleCompletingTask, handleDeleteTask }: TaskProps) {
+  const checkedClass = task.completed ? styles.checked : ''
+
   function completeTask() {
     handleCompletingTask(task.id)
   }
@@ -23,7 +25,7 @@ export function Task({ task, handleCompletingTask, handleDeleteTask }: TaskProps
   }
 
   return (
-    <div className={styles.task}>
+    <div className={`${styles.task} ${checkedClass}`}>
       <label className={styles.checkboxContainer}>
         <input onClick={completeTask} type="checkbox"/>
         <span className={styles.checkmark} />

@@ -4,20 +4,21 @@ import { Tasks } from './components/Tasks'
 import './global.css'
 import styles from './App.module.css'
 import { useState } from 'react'
+import uuid from 'react-uuid'
 
 export function App() {
-  const [tasks, setTasks] = useState<{id: number; comment: string; completed: boolean}[]>([])
+  const [tasks, setTasks] = useState<{id: string; comment: string; completed: boolean}[]>([])
 
   function handleCreateNewTask(newTaskText: string) {
     const newTask = {
-      id: tasks.length + 1,
+      id: uuid(),
       comment: newTaskText,
       completed: false
     }
     setTasks([...tasks, newTask])
   }
 
-  function handleCompletingTask(taskId: number) {
+  function handleCompletingTask(taskId: string) {
     const updatedTasks = tasks.map((task) => {
       if (task.id === taskId) {
         return {...task, completed: !task.completed}
@@ -28,7 +29,7 @@ export function App() {
     setTasks(updatedTasks)
   }
 
-  function handleDeleteTask(taskId: number) {
+  function handleDeleteTask(taskId: string) {
     const updatedTasks = tasks.filter(task => task.id !== taskId)
     setTasks(updatedTasks)
   }
@@ -37,7 +38,7 @@ export function App() {
     <>
       <Header />
       <div className={styles.wrapper}>
-        <NewTask createNewTask={handleCreateNewTask} />
+        <NewTask handleCreateNewTask={handleCreateNewTask} />
         <Tasks
           tasks={tasks}
           handleCompletingTask={handleCompletingTask}
