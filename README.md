@@ -1,30 +1,19 @@
-# React + TypeScript + Vite
+<img src="src/assets/todo-logo.svg" width="20%">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Uma página web para criação e controle de tarefas.
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Sobre o projeto
 
-## Expanding the ESLint configuration
+O todo é um desafio de desenvolvimento proposto pela rocketseat em seu curso de react, para a prática de conceitos básicos da linguagem.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Com esse projeto pude exercitar o aprendizado que estou tendo em react, typescript e colocar em prática os meus conhecimentos em CSS.
 
-- Configure the top-level `parserOptions` property like this:
+#### [Veja o figma do projeto](https://www.figma.com/file/lAnGoTU9PGVhKPEw3K33ZX/ToDo-List-%E2%80%A2-Desafio-React-(Copy)?type=design&node-id=56%3A96&mode=design&t=esKrRwkeCs6TNcc8-1)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+#### [Visualize o projeto hospedado no vercel aqui ](https://todo-list-eight-flax.vercel.app/) 
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+<img src="https://vercel.com/_next/image?url=%2Fapi%2Fscreenshot%3Fdark%3D1%26deploymentId%3Ddpl_3aWohj3LhxP6eAzLQrNy9rQew7Va%26teamId%3Dluisgustavotbarbosa%26withStatus%3D1&w=640&q=75&dpl=dpl_9fFFLpbhyGAatH3fca1VdQujwU2S" width="100%">
